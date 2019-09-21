@@ -3,10 +3,7 @@ package cn.wpin.mall.client.mongo;
 import cn.wpin.mall.common.entity.CommonResult;
 import cn.wpin.mall.mongo.entity.MemberBrandAttention;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,7 +27,7 @@ public interface MemberAttentionClient {
      * 取消关注
      */
     @RequestMapping(value = "member/attention/delete", method = RequestMethod.POST)
-    CommonResult delete(Long memberId, Long brandId);
+    CommonResult delete(@RequestParam Long memberId,@RequestParam Long brandId);
 
     /**
      * 显示关注列表

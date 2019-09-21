@@ -37,5 +37,5 @@ public interface MemberReadHistoryClient {
      * 展示浏览记录
      */
     @RequestMapping(value = "member/readHistory/list", method = RequestMethod.GET)
-    CommonResult<List<MemberReadHistory>> list(Long memberId);
+    CommonResult<List<MemberReadHistory>> list(@RequestParam Long memberId);
 }

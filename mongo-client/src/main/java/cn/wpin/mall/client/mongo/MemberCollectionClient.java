@@ -3,10 +3,7 @@ package cn.wpin.mall.client.mongo;
 import cn.wpin.mall.common.entity.CommonResult;
 import cn.wpin.mall.mongo.entity.MemberProductCollection;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,7 +26,7 @@ public interface MemberCollectionClient {
      * 删除收藏商品
      */
     @RequestMapping(value = "member/collection/deleteProduct", method = RequestMethod.POST)
-    CommonResult deleteProduct(Long memberId, Long productId);
+    CommonResult deleteProduct(@RequestParam Long memberId,@RequestParam Long productId);
 
     /**
      * 显示关注列表
